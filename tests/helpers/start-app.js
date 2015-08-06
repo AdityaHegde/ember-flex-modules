@@ -1,6 +1,11 @@
-import Ember from 'ember';
-import Application from '../../app';
-import config from '../../config/environment';
+import Ember from "ember";
+import Application from "../../app";
+import config from "../../config/environment";
+/* jshint ignore:start */
+import fillFormElement from "./fillFormElement";
+import clickFormElement from "./clickFormElement";
+import initModule from "./initModule";
+/* jshint ignore:end */
 
 export default function startApp(attrs) {
   var application;
