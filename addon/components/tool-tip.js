@@ -10,7 +10,7 @@ export default WrapperComponent.extend(ShowHideMixin, {
   delay : Ember.computed.alias("moduleColumnData.delay"),
 
   type : "button",
-  tagName : "span",
+  defaultTagName : "span",
 
   showEvent : "show.bs.tooltip",
   shownEvent : "shown.bs.tooltip",

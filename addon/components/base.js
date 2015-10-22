@@ -1,5 +1,6 @@
 import Ember from "ember";
 import layout from "../templates/components/base";
+import BaseMixin from "../mixins/base-mixin";
 
 /**
  * Base component for modules. Has the hack to update element ID.
@@ -7,7 +8,7 @@ import layout from "../templates/components/base";
  * @module ember-flex-modules
  * @class EmberFlexModules.BaseComponent
  */
-export default Ember.Component.extend({
+export default Ember.Component.extend(BaseMixin, {
   init : function() {
     this._super();
     this.elementIdShouldChange();
@@ -37,13 +38,4 @@ export default Ember.Component.extend({
    * @property record
    */
   record : null,
-
-  elementIdShouldChange : Ember.observer("moduleColumnData.idKey", "record", function() {
-    var
-    idKey = this.get("moduleColumnData.idKey"),
-    record = this.get("record");
-    if(record && idKey) {
-      this.set("elementId", record.get(idKey));
-    }
-  }),
 });

@@ -6,6 +6,7 @@ export default {
   "baseText"       : "ember-flex-module-base-text",
   "collapseButton" : "ember-flex-module-collapse-button",
   "collapseTarget" : "ember-flex-module-collapse-target",
+  "mappedValue"    : "ember-flex-module-mapped-value",
   "multiComponent" : "ember-flex-module-multi-component",
   "multiRecord"    : "ember-flex-module-multi-record",
   "wrapper"        : "ember-flex-module-wrapper-component",

@@ -1,7 +1,8 @@
 import Ember from "ember";
 import WrapperComponentMixin from "../mixins/wrapper-component-mixin";
+import BaseMixin from "../mixins/base-mixin";
 
-export default Ember.LinkComponent.extend(WrapperComponentMixin, {
+export default Ember.LinkComponent.extend(WrapperComponentMixin, BaseMixin, {
   willRender : function() {
     var
     //columnData = this.get("columnData"),
@@ -38,24 +39,5 @@ export default Ember.LinkComponent.extend(WrapperComponentMixin, {
     },
   }),
 
-  href: Ember.computed("models", "targetRouteName", "_routing.currentState", function() {
-    var tagName = this.get("tagName"); 
-    if((Ember.typeOf(tagName) === "string" && tagName !== "a") || tagName.cache !== "a") {
-      return;
-    }
-
-    var targetRouteName = this.get("targetRouteName");
-    var models = this.get("models");
-
-    if (this.get("loading")) {
-      return this.get("loadingHref");
-    }
-
-    targetRouteName = this._handleOnlyQueryParamsSupplied(targetRouteName);
-
-    var routing = this.get("_routing");
-    return routing.generateURL(targetRouteName, models, this.get("queryParams.values"));
-  }),
-
-  tagName : "a",
+  defaultTagName : "a",
 });
